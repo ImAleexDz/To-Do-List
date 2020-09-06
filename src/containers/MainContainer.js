@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../components/Navbar'
 import Task from '../components/Task'
 import axios from 'axios'
+import { TaskClass } from '../utils/TaskClass'
 
 const MainContainer = () => {
 
@@ -21,8 +21,11 @@ const MainContainer = () => {
             .catch((error) => console.log(error))
     };
 
-    const completeTask = () => {
-
+    const completeTask = (category, title, done, id) => {
+        const currentTask = new TaskClass(category, title, done, id);
+        axios.patch(URL, currentTask)
+        .then(() => getTasks())
+        .catch((error) => alert(error));
     };
 
     useEffect(() => {
@@ -31,7 +34,7 @@ const MainContainer = () => {
 
     return (
         <React.Fragment>
-            <Navbar />
+            
             <div className="container my-cont">
                 {tasks
                     ? Object.keys(tasks).map((id) =>
@@ -42,6 +45,7 @@ const MainContainer = () => {
                             done={tasks[id].done}
                             category={tasks[id].category}
                             deleteTask={deleteTask}
+                            completeTask={completeTask}
                         />)
                     : <h1>
                         No hay tareas disponibles

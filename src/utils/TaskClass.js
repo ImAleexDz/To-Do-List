@@ -1,18 +1,14 @@
 class TaskClass {
     constructor(category, title, done, id) {
         this[id] = {
-            category = category,
-            title = title,
-            done = false,
+            category : category,
+            title : title,
+            done : done
         }
         
     }
-
-    setTask(res) {
-        this.tasks = res;
-    }
 }
 
-const ejemplo = new TaskClass('hogar', 'tarea', true, sjodfnos)
+// const ejemplo = new TaskClass('hogar', 'tarea', true, sjodfnos)
 
-module.exports = { Task };
+module.exports = { TaskClass };
