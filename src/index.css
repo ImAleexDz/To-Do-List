@@ -1,5 +1,11 @@
+*{
+    margin: 0;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
 .bg{
-    background-image: url('./assets/img-1.jpg');
+    background-image: url('./assets/emma-smith-tdUYv18Huxk-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

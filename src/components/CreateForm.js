@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './form.css'
 
 const CreateForm = (props) => {
     const { createTask } = props
@@ -23,7 +24,7 @@ const CreateForm = (props) => {
     };
 
     return (
-        <div className="my-form">
+        <div className="my-form mt-5">
             <div className="form-group">
                 <label htmlFor="title">Tarea</label>
                 <input type="text" className="form-control" onChange={titleHandler} />
